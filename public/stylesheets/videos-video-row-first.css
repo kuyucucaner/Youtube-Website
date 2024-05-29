@@ -1,0 +1,77 @@
+.video-row-first {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 88vh;
+  }
+  .video-container{
+    margin-left:6em;
+    margin-top:1.5em;
+    margin-right: 3em;
+    
+  }
+  .video-box{
+    width: 24%; /* Adjust as needed */
+    margin-bottom: 20px;
+    cursor: pointer;
+
+  }
+  .video-content{
+    display: flex;
+    margin-top:10px;
+    
+  }
+  .video-box-left {
+    flex: 0 0 auto; /* Sabit genişlik */
+    margin-right: 10px; /* İsteğe bağlı boşluk */
+  }
+  
+  .video-box-right {
+    flex-grow: 1; /* İçeriği genişletmek için */
+  }
+  .video-image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .video-title{
+    font-size: 16px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+  .video-channel-title {
+    font-size: 15px; /* Kanal başlığı font büyüklüğü */
+    color: #aaaaaa; /* Kanal başlığı rengi */
+    margin-top: -8px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .video-box-right-line{
+    display: flex;
+    margin-top: -25px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .video-publish-time {
+    color: #aaaaaa; /* Yayın zamanı rengi */
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+
+  }
+  .video-view{
+    color: #aaaaaa;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+
+  }
+.video-channel-image{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/sidebar.css" id="dark-theme-style" class="dark-theme-style">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+    <script src="https://kit.fontawesome.com/f54cf73625.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>CanerTube</title>
+</head>
+<body>
+    <div id="my-sidebar" class="sidebar">
+        <div class="sidebar-links">
+            <div class="sidebar-links-first">
+                <a class="sidebar-router-tiny" id="sidebar-router-tiny" href="/"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+                <a class="sidebar-router-tiny" id="sidebar-router-tiny" href="/shorts"><i class="fa-regular fa-circle-play"></i> Shorts</a>
+                <a class="sidebar-router-tiny" id="sidebar-router-tiny" href="/subscriptions"><i class="fa-regular fa-square-plus"></i> Abonelikler</a>
+                <a class="sidebar-router-tiny" id="sidebar-router-tiny" href="/you"><i class="fa-solid fa-folder-plus"></i> Siz</a>
+                <a class="sidebar-router-tiny" id="sidebar-router-tiny" href="/downloads"><i class="bi bi-download"></i> İndirilenler</a>
+            </div>
+            <div class="sidebar-links-second">
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/you"> Siz <i class="bi bi-chevron-right"></i></a>
+                <% if (user) { %>
+                    <a class="sidebar-router-large" id="sidebar-router-large" href="/channel">
+                        <i class="bi bi-person-square"></i> Kanalınız
+                    </a>
+                <% } %>                
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/watch-history"><i class="bi bi-arrow-counterclockwise"></i> Geçmiş</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/watch-list"><i class="bi bi-list-stars"></i> Oynatma listeleri</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://studio.youtube.com" target="_blank"><i class="bi bi-play-btn"></i> Videolarınız</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/watch-later"><i class="bi bi-clock-history"></i> Daha sonra izle</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/watch-likes"><i class="bi bi-hand-thumbs-up"></i> Beğendiğim Videolar</a>
+            </div>
+            <div class="sidebar-links-third">
+                <p class="sidebar-router-large-text" id="sidebar-router-large">Abonelikler</p>
+                <% if (followers && followers.length > 0) { %>
+                    <% followers.forEach(function(follower) { %>
+                      <div class="sidebar-links-third-channel">
+                        <img class="sidebar-router-large-image" id="sidebar-router-large-image" src="<%= follower.photo %>" alt="channel-photo">
+                        <a class="sidebar-router-large-channel-name" id="sidebar-router-large" href="http://localhost:3000/user-channel/<%= follower.user_id %>"><%= follower.display_name %></a>
+                      </div>
+                    <% }); %>
+                  <% } else { %>
+                    <p class="sidebar-router-large-channel-name" id="sidebar-router-large">Abone mevcut değil.</p>
+                  <% } %>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/subscriptions"><i class="bi bi-chevron-down"></i> Daha fazla göster</a>
+            </div>
+            <div class="sidebar-links-fourth">
+                <p class="sidebar-router-large-text" id="sidebar-router-large">Keşfet</p>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/trend-videos"><i class="bi bi-fire"></i> Trendler</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/music-videos"><i class="bi bi-music-note-beamed"></i> Müzik</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/game-videos"><i class="bi bi-controller"></i> Oyun</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="/sport-videos"><i class="bi bi-dribbble"></i> Spor</a>
+            </div>
+            <div class="sidebar-links-fifth">
+                <p class="sidebar-router-large-text" id="sidebar-router-large">CanerTube'dan daha fazla...</p>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://studio.youtube.com" target="_blank"><i class="bi bi-youtube"></i> CanerTube Studio</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://music.youtube.com" target="_blank"><i class="bi bi-youtube"></i> CanerTube Music</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://www.youtubekids.com/" target="_blank"><i class="bi bi-youtube"></i> CanerTube Kids</a>
+            </div>
+            <div class="sidebar-links-sixth">
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://studio.youtube.com" target="_blank"><i class="bi bi-gear"></i> Ayarlar</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://studio.youtube.com" target="_blank"><i class="bi bi-flag"></i> İçerik bildirme geç...</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://studio.youtube.com" target="_blank"><i class="bi bi-question-circle"></i> Yardım</a>
+                <a class="sidebar-router-large" id="sidebar-router-large" href="https://studio.youtube.com" target="_blank"><i class="bi bi-exclamation-square"></i> Geri bildirim gönder</a>
+            </div>
+            <div class="sidebar-links-seventh">
+                <a class="sidebar-links-information">Hakkında</a>
+                <a class="sidebar-links-information">Basın</a>
+                <a class="sidebar-links-information">Telif Hakkı</a>
+                <a class="sidebar-links-information">Bize ulaşın</a>
+                <a class="sidebar-links-information">İçerik</a>
+                <a class="sidebar-links-information">Üreticiler</a>
+                <a class="sidebar-links-information">Reklam verme</a>
+                <a class="sidebar-links-information">Geliştiriciler</a>
+                <br>
+                <a class="sidebar-links-information">Şartlar</a>
+                <a class="sidebar-links-information">Gizli</a>
+                <a class="sidebar-links-information">Politika ve Güvenlik</a>
+                <a class="sidebar-links-information">CanerTube nasıl çalışıyor?</a>
+                <a class="sidebar-links-information">Yeni özellikleri deneyin</a>
+                <br>
+                <a class="sidebar-links-information-company">&copy; 2024 CanerTube LLC</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

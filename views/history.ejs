@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>CanerTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/history.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+  <%- include('../views/partials/navbar') %>
+
+  <% if (user) { %>
+      <% if (history && history.length > 0) { %>
+          <div class="watch-history-container" id="watch-history-container">
+              <p class="watch-history-title">İzleme Geçmişi</p>
+              <div class="watch-history-left">
+                  <% history.forEach(function(historyItem) { %>
+                      <a href="http://localhost:3000/video-detail/<%= historyItem.video_id %>" class="video-link-href">
+                          <div class="watch-history-video-container">
+                              <img src="<%= historyItem.thumbnail_url %>" alt="watch-history-video-image" class="watch-history-video-image">
+                              <div class="watch-history-video-text">
+                                  <p class="watch-history-video-title"><%= historyItem.title %></p>
+                                  <div class="watch-history-video-channel-view">
+                                      <p class="watch-history-video-channel"><%= historyItem.display_name %></p>
+                                      <p class="video-view" id="watch-history-video-view"><%= historyItem.view_count %></p>
+                                  </div>
+                                  <p class="watch-history-video-description"><%= historyItem.description.substring(0, 300) %>...</p>
+                              </div>
+                          </div>
+                      </a>
+                  <% }); %>
+              </div>
+          </div>
+      <% } else { %>
+          <div class="watch-history-container" id="watch-history-container">
+              <p class="watch-history-title">İzleme Geçmişi</p>
+              <p class="watch-history-video-title">Bu liste boş</p>  
+          </div>
+      <% } %>
+  <% } else { %>
+      <div class="watch-history-login">
+          <p class="watch-history-login-text">Lütfen CanerTube'ye giriş yapınız!</p>
+          <button class="watch-history-login-button" onclick="goToLogin()">Giriş yap</button>
+      </div>
+  <% } %>
+  
+  <%- include('../views/partials/sidebar') %>
+  
+  <script src="/javascripts/sidebar-history-handle.js"></script>
+  <script src="/javascripts/voice-input.js"></script>
+  <script src="/javascripts/clear-input.js"></script>
+  <script src="/javascripts/navigate-to.js"></script>
+  <script src="/javascripts/google-login.js"></script>
+  <script src="/javascripts/time-difference.js"></script>
+  <script src="/javascripts/view-changer.js"></script>
+  <script src='/javascripts/searched-videos.js'></script>
+
+  <script src="/javascripts/navbar-setting-dropdown.js"></script>
+  <script src="/javascripts/navbar-profile-dropdown.js"></script>
+  <script src="/javascripts/navbar-setting-limited-toggle.js"></script>
+  <script src="/javascripts/close-shorts.js"></script>
+    
+</body>
+</html>

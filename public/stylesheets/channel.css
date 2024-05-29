@@ -1,0 +1,203 @@
+body{
+    background-color: #0f0f0f;
+    font-family: 'Roboto', sans-serif;
+}
+.channel-container{
+    margin-top: 5em;
+    margin-left:12em;
+}
+.channel-user-container{
+    display: flex;
+    flex-direction: row;
+}
+.channel-user-photo{
+    width: 9.8em;
+    height:9.8em;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.channel-user-container-right{
+    display: flex;
+    flex-direction: column;
+    margin-left:25px;
+}
+.channel-user-name{
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+    margin-top: 0;
+}
+.channel-user-nickname-subscription{
+    display: flex;
+    flex-direction: row;
+    margin-top:-2em;
+}
+.channel-user-nickname {
+    font-size: 14px;
+    color:#b0b0b0;
+}
+.channel-user-subscription{
+    font-size: 14px;
+    color:#b0b0b0;
+    margin-left:10px;
+}
+.channel-user-more-button{
+    font-size: 14px;
+    color:#b0b0b0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: auto;
+}
+.channel-user-setting-button{
+    margin-top:1em;
+}
+.channel-user-set-channel-button{
+    background-color: #272727;
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.channel-user-set-video-button{
+    background-color: #272727;
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.channel-button-container{
+    border-bottom: 1px solid rgb(87, 87, 87);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+
+}
+.channel-button-home{
+    margin-left: 10em;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding:10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.channel-button-list ,.channel-button-community ,.channel-button-search{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding:10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.channel-featured-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3em;
+    width: 20%;
+    align-items: center;
+}
+.channel-featured-image{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+.channel-featured-header-text{
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+.channel-featured-body-text{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    margin-top:-5px;
+}
+.channel-featured-button{
+    padding:10px 15px;
+    border-radius: 20px;
+    border:none;
+    font-weight: bold;
+}
+
+
+
+
+.channel-playlist-video-container{  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right:6em;
+    margin-left: 9em;
+    margin-top:15px;
+  }
+.channel-playlist-video-row{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .channel-playlist-video-list-image{
+    width:250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border-top: 5px solid rgba(255, 255, 255, 0.452);
+    cursor: pointer;
+    position: relative;
+  }
+  .channel-playlist-video-length{
+    color: white;
+    background-color: #362f27cb;
+    font-size: 13px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Roboto' , sans-serif;
+    position: absolute;
+    bottom:16em;
+    margin-left:11em;
+    padding: 8px 20px;
+  }
+  .channel-playlist-video-list-name{
+    color: white;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  .channel-playlist-container{
+    margin-top:15px;
+  }
+  .channel-playlist-title{
+    color: white;
+    font-size: 16px;
+    margin-top:15px;
+    font-weight: bold;
+}
+.channel-playlist-top {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    margin-left:9em;
+  }
+  .channel-playlist-show-all{
+    color: #b0b0b0;
+    font-size: 12px;
+  }
+.channel-community-text{
+    color: white;
+    font-weight: bold;
+
+}
+.channel-community-container{
+text-align: center;
+}

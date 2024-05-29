@@ -1,0 +1,93 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+    font-family: 'Roboto' , sans-serif;
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.watch-history-container{
+    margin-left: 10.8em;
+    margin-top: 5.6em;
+    cursor: pointer;
+}
+.watch-history-title{
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+}
+.watch-history-left{
+    width: 60%;
+}
+.watch-history-video-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.watch-history-video-image{
+    min-width: 250px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.watch-history-video-text{
+    display: flex;
+    margin-left:10px;
+    flex-direction: column;
+}
+.watch-history-video-title{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+}
+.watch-history-video-channel-view{
+    display: flex;
+    flex-direction: row;
+    margin-top:-1.5em;
+
+}
+.watch-history-video-channel{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-left: 1px;
+
+}
+#watch-history-video-view{
+    margin-left: 20px;
+    color: #aaaaaa;
+    font-size: 13px;
+}
+.watch-history-video-description{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-top: 0em;
+}
+.watch-history-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20em;
+    text-align: center;
+    align-items: center;
+}
+.watch-history-login-text{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.watch-history-login-button{
+    color: white;
+    background-color: #272727;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s background-color ease;
+}
+.watch-history-login-button:hover {
+    background-color: #444444;
+}

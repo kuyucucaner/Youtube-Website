@@ -1,0 +1,93 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+    font-family: 'Roboto' , sans-serif;
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.trend-container{
+    margin-left: 10.8em;
+    margin-top: 5.6em;
+    cursor: pointer;
+}
+.trend-title{
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+}
+.trend-left{
+    width: 90%;
+}
+.trend-video-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.trend-video-image{
+    min-width: 250px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.trend-video-text{
+    display: flex;
+    margin-left:10px;
+    flex-direction: column;
+}
+.trend-video-title{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+}
+.trend-video-channel-view{
+    display: flex;
+    flex-direction: row;
+    margin-top:-1.5em;
+
+}
+.trend-video-channel{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-left: 1px;
+
+}
+#trend-video-view{
+    margin-left: 20px;
+    color: #aaaaaa;
+    font-size: 13px;
+}
+.trend-video-description{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-top: 0em;
+}
+.trend-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20em;
+    text-align: center;
+    align-items: center;
+}
+.trend-login-text{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.trend-login-button{
+    color: white;
+    background-color: #272727;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s background-color ease;
+}
+.trend-login-button:hover {
+    background-color: #444444;
+}

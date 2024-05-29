@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css" id="dark-theme-style" class="dark-theme-style">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+    <script src="https://kit.fontawesome.com/f54cf73625.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>CanerTube</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <button class="navbar-sidebar-toggle" onclick="toggleSidebar()"><i class="bi bi-list"></i></button>
+                <div class="navbar-logo-container">
+                    <a href="/" class="navbar-logo-text"><i class="fa-brands fa-youtube"></i>CanerTube</a>
+                    <p class="navbar-country-code">TR</p>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <div class="navbar-search-container">
+                    <input class="navbar-search" type="text" placeholder=" Ara" id="search-input">
+                    <span class="navbar-clear-button" id="clear-search-input">×</span>
+                    <button class="navbar-search-button" type="button" id="search-button" onclick="handleSearch()">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>                
+                <button class="navbar-search-button-mic" type="button" id="voice-search-button">
+                    <i class="bi bi-mic-fill"></i>
+                </button>
+            </div>
+            <div class="navbar-right">
+                <% if (user) { %>
+                    <button class="navbar-create-button" id="create-button" ><i class="bi bi-camera-video" id="bi-camera-video-button"></i></button>
+                    <div class="navbar-create-container" id="navbar-create-container">
+                        <a class="navbar-setting-dropdown-button" href="https://studio.youtube.com" target="_blank"><i class="bi bi-plus-square-dotted"></i> Video yükle</a>
+                        <a class="navbar-setting-dropdown-button" href="https://studio.youtube.com" target="_blank"><i class="bi bi-cast"></i> Canlı yayın yap</a>
+                        <a class="navbar-setting-dropdown-button" href="https://studio.youtube.com" target="_blank" ><i class="bi bi-pencil-square"></i> Yayın oluştur</a>
+                    </div>
+
+                    <button class="navbar-announcement-button" id="announcement-button" ><i class="bi bi-bell" id="bi-bell-button"></i></button>
+                    <div class="navbar-announcement-container" id="announcement-container">
+                        <div class="navbar-announcement-title">
+                            <p class="navbar-announcement-title-text">Bildirimler</p>
+                            <i class="bi bi-gear" id="bi-gear-announcement"></i>
+                        </div>
+                        <div class="navbar-announcement-body">
+                            <i class="bi bi-bell" id="announcement-bell"></i>
+                            <p class="navbar-announcement-body-title">Bildirimleriniz burada gösterilir</p>
+                            <p class="navbar-announcement-body-text">Favori kanallarınıza abone olarak bu kanalların en yeni videoları hakkında bildirim alın.</p>
+                        </div>
+                    </div>
+
+                    
+                    <img src="<%= user.photos[0].value %>" alt="Profile Photo" class="navbar-profile-photo" id="profile-button"/>
+                    <div class="navbar-profile-container" id="navbar-profile-container">
+                        <div class="navbar-profile-information" id="navbar-profile-information">
+                            <div class="navbar-profile-information-left">
+                                <img src="<%= user.photos[0].value %>" alt="Profile Photo" class="navbar-profile-photo" id="profile-button"/>
+                            </div>
+                            <div class="navbar-profile-information-right">
+                                <p class="navbar-profile-name"><%= user.displayName %></p>
+                                <p class="navbar-profile-nickname">@nickname</p>
+                                <button class="navbar-profile-detail-button">Kanalınızı görüntüleyin</button>
+                            </div>
+                        </div>
+                        <div class="navbar-profile-overflow">
+                            <div class="navbar-profile-google">
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-google"></i> Google hesabı</a>
+
+                                <a class="navbar-setting-dropdown-button" id="navbar-profile-change-account-button" href="#"><i class="bi bi-person-video"></i> Hesap değiştir <i class="bi bi-chevron-right"></i></a>
+                                <div class="navbar-profile-dropdown-account" id="navbar-profile-dropdown-account">
+                                    <div class="navbar-profile-change-account-header">
+                                        <p class="navbar-profile-change-account-name"><%= user.displayName %></p>
+                                        <p class="navbar-profile-change-account-email">tahacanerkuyucu@gmail.com</p>
+                                    </div>
+                                    <div class="navbar-profile-change-account-body">
+                                        <div class="navbar-profile-change-account-body-top">
+                                            <div class="navbar-profile-change-account-body-left">
+                                                <img class="navbar-profile-change-current-profile-photo" src="<%= user.photos[0].value %>" alt="Profile Photo">
+                                            </div>
+                                            <div class="navbar-profile-change-account-body-middle">
+                                                <p class="navbar-profile-change-account-name"><%= user.displayName %></p>
+                                                <p class="navbar-profile-change-account-nickname">@nickname</p>
+                                                <p class="navbar-profile-change-account-count-subscriber">2 Abone</p>
+                                            </div>
+                                            <div class="navbar-profile-change-account-body-right">
+                                                <i class="bi bi-check2"></i>
+                                            </div>
+                                        </div>
+                                        <a class="navbar-setting-dropdown-button" id="show-all-accounts"href="#">Tüm kanalları göster</a>
+                                        <div class="navbar-profile-change-account-body-bottom">
+                                            <div class="navbar-profile-change-account-other-account">
+                                                <p class="navbar-profile-change-account-other-text">Diğer hesaplar</p>
+                                                <p class="navbar-profile-change-account-other-text">Başka hesap yok!</p>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="navbar-profile-change-account-footer">
+                                        <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-person-fill-add"></i> Hesap ekle</a>
+                                        <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-box-arrow-in-right"></i> Oturumu kapat</a>
+                                    </div>
+                                </div>
+
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-box-arrow-in-right"></i> Oturumu kapat</a>
+                            </div>
+                            <div class="navbar-profile-youtube">
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-play-btn"></i> Canertube Studio</a>
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-file-ppt-fill"></i> Premium avantajlarınız</a>
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-currency-dollar"></i> Satın alınanlar ve üyelikler</a>
+                            </div>
+                            <div class="navbar-profile-setting">
+                                <div class="navbar-setting-dropdown-menu-top">
+                                    <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-shield-lock"></i> CanerTube'daki verileriniz</a>
+        
+                                    <a class="navbar-setting-dropdown-button" id="navbar-profile-dropdown-view-button" ><i class="bi bi-moon"></i> Görünüm: Cihaz Teması <i class="bi bi-chevron-right"></i></a>
+                                    <div class="navbar-profile-dropdown-view" id="navbar-profile-dropdown-view">
+                                        <p class="navbar-setting-dropdown-view-text">Ayar, yalnızca bu tarayıcı için geçerlidir</p>
+                                        <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-check2"></i> Cihaz teması kullan</a>
+                                        <a class="navbar-setting-dropdown-button" href="#">Koyu tema</a>
+                                        <a class="navbar-setting-dropdown-button" href="#">Açık tema</a>
+                                    </div>
+        
+                                    <a class="navbar-setting-dropdown-button" id="navbar-profile-dropdown-language-button" href="#"><i class="bi bi-translate"></i> Dil: Türkçe <i class="bi bi-chevron-right"></i></a>
+                                    <div class="navbar-profile-dropdown-language" id="navbar-profile-dropdown-language">
+                                        <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-check2"></i> Türkçe</a>
+                                        <a class="navbar-setting-dropdown-button" href="#"> İngilizce</a>
+                                    </div>
+        
+                                    <a class="navbar-setting-dropdown-button" id="navbar-profile-dropdown-limited-button" href="#"><i class="bi bi-lock"></i> Kısıtlı Mod: Kapalı <i class="bi bi-chevron-right"></i></a>
+                                    <div class="navbar-profile-dropdown-limited" id="navbar-profile-dropdown-limited">
+                                        <p class="navbar-setting-dropdown-limited-text">Bu mod, yetişkinlere uygun olabilecek videoların gizlenmesine yardımcı olur. Hiçbir filtre %100 etkili değildir.</p>
+                                        <p class="navbar-setting-dropdown-limited-text">Bu ayar yalnızca bu tarayıcı için geçerlidir.</p>
+                                        <div class="navbar-setting-dropdown-limited-toggle-container">
+                                            <label for="navbar-setting-dropdown-limited-toggle" class="navbar-setting-dropdown-limited-toggle-label">KISITLI MODU ETKİNLEŞTİR</label>
+                                            <input type="checkbox" id="navbar-setting-dropdown-limited-toggle" class="navbar-setting-dropdown-limited-toggle-input">
+                                          </div>
+                                    </div>
+        
+                                    <a class="navbar-setting-dropdown-button" id="navbar-profile-dropdown-country-button" href="#"><i class="bi bi-globe"></i> Konum: Türkiye <i class="bi bi-chevron-right"></i></a>
+                                    <div class="navbar-profile-dropdown-country" id="navbar-profile-dropdown-country">
+                                        <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-check2"></i> Türkiye</a>
+                                        <a class="navbar-setting-dropdown-button" href="#"> İngiltere</a>
+                                    </div>
+                                    <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-keyboard"></i> Klavye Kısayolları</a>
+                                </div>
+                                <div class="navbar-setting-dropdown-menu-middle">
+                                    <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-gear"></i> Ayarlar</a>
+                                </div>
+                                <div class="navbar-setting-dropdown-menu-bottom">
+                                    <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-question-circle"></i> Yardım</a>
+                                    <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-exclamation-square"></i> Geri bildirim gönder</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <button class="navbar-setting-button" id="setting-button" ><i class="bi bi-three-dots-vertical"></i></button>
+                    <div class="navbar-setting-dropdown-menu" id="navbar-setting-dropdown-menu">
+                        <div class="navbar-setting-dropdown-menu-top">
+                            <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-shield-lock"></i> CanerTube'daki verileriniz</a>
+
+                            <a class="navbar-setting-dropdown-button" id="navbar-setting-dropdown-view-button" ><i class="bi bi-moon"></i> Görünüm: Cihaz Teması <i class="bi bi-chevron-right"></i></a>
+                            <div class="navbar-setting-dropdown-view" id="navbar-setting-dropdown-view">
+                                <p class="navbar-setting-dropdown-view-text">Ayar, yalnızca bu tarayıcı için geçerlidir</p>
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-check2"></i> Cihaz teması kullan</a>
+                                <a class="navbar-setting-dropdown-button" href="#">Koyu tema</a>
+                                <a class="navbar-setting-dropdown-button" href="#">Açık tema</a>
+                            </div>
+
+                            <a class="navbar-setting-dropdown-button" id="navbar-setting-dropdown-language-button" href="#"><i class="bi bi-translate"></i> Dil: Türkçe <i class="bi bi-chevron-right"></i></a>
+                            <div class="navbar-setting-dropdown-language" id="navbar-setting-dropdown-language">
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-check2"></i> Türkçe</a>
+                                <a class="navbar-setting-dropdown-button" href="#"> İngilizce</a>
+                            </div>
+
+                            <a class="navbar-setting-dropdown-button" id="navbar-setting-dropdown-limited-button" href="#"><i class="bi bi-lock"></i> Kısıtlı Mod: Kapalı <i class="bi bi-chevron-right"></i></a>
+                            <div class="navbar-setting-dropdown-limited" id="navbar-setting-dropdown-limited">
+                                <p class="navbar-setting-dropdown-limited-text">Bu mod, yetişkinlere uygun olabilecek videoların gizlenmesine yardımcı olur. Hiçbir filtre %100 etkili değildir.</p>
+                                <p class="navbar-setting-dropdown-limited-text">Bu ayar yalnızca bu tarayıcı için geçerlidir.</p>
+                                <div class="navbar-setting-dropdown-limited-toggle-container">
+                                    <label for="navbar-setting-dropdown-limited-toggle" class="navbar-setting-dropdown-limited-toggle-label">KISITLI MODU ETKİNLEŞTİR</label>
+                                    <input type="checkbox" id="navbar-setting-dropdown-limited-toggle" class="navbar-setting-dropdown-limited-toggle-input">
+                                  </div>
+                            </div>
+
+                            <a class="navbar-setting-dropdown-button" id="navbar-setting-dropdown-country-button" href="#"><i class="bi bi-globe"></i> Konum: Türkiye <i class="bi bi-chevron-right"></i></a>
+                            <div class="navbar-setting-dropdown-country" id="navbar-setting-dropdown-country">
+                                <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-check2"></i> Türkiye</a>
+                                <a class="navbar-setting-dropdown-button" href="#"> İngiltere</a>
+                            </div>
+                            <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-keyboard"></i> Klavye Kısayolları</a>
+                        </div>
+                        <div class="navbar-setting-dropdown-menu-middle">
+                            <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-gear"></i> Ayarlar</a>
+                        </div>
+                        <div class="navbar-setting-dropdown-menu-bottom">
+                            <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-question-circle"></i> Yardım</a>
+                            <a class="navbar-setting-dropdown-button" href="#"><i class="bi bi-exclamation-square"></i> Geri bildirim gönder</a>
+                   
+                        </div>
+                      </div>
+                    <button class="navbar-login-button" id="login-button" onclick="goToLogin()"><i class="bi bi-person-circle"></i> Oturum aç</button>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+
+</body>
+</html>

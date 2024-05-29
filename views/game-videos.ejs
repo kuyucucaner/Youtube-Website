@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>CanerTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/game-videos.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+  <%- include('../views/partials/navbar') %>
+
+          <div class="game-videos-container" id="watch-history-container">
+              <p class="game-videos-title"><i class="bi bi-controller"></i> Oyunlar</p>
+              <div class="game-videos-left">
+                  <% games.forEach(function(game) { %>
+                      <a href="http://localhost:3000/video-detail/<%= game.video_id %>" class="video-link-href">
+                          <div class="game-videos-video-container">
+                              <img src="<%= game.thumbnail_url %>" alt="game-videos-video-image" class="game-videos-video-image">
+                              <div class="game-videos-video-text">
+                                  <p class="game-videos-video-title"><%= game.title %></p>
+                                  <div class="game-videos-video-channel-view">
+                                      <p class="game-videos-video-channel"><%= game.display_name %></p>
+                                      <p class="video-view" id="game-videos-video-view"><%= game.view_count %></p>
+                                  </div>
+                                  <p class="game-videos-video-description"><%= game.description.substring(0, 300) %>...</p>
+                              </div>
+                          </div>
+                      </a>
+                  <% }); %>
+              </div>
+          </div>
+
+  <%- include('../views/partials/sidebar') %>
+  
+  <script src="/javascripts/sidebar-history-handle.js"></script>
+  <script src="/javascripts/voice-input.js"></script>
+  <script src="/javascripts/clear-input.js"></script>
+  <script src="/javascripts/navigate-to.js"></script>
+  <script src="/javascripts/google-login.js"></script>
+  <script src="/javascripts/time-difference.js"></script>
+  <script src="/javascripts/view-changer.js"></script>
+  <script src='/javascripts/searched-videos.js'></script>
+  <script src="/javascripts/navbar-setting-dropdown.js"></script>
+  <script src="/javascripts/navbar-profile-dropdown.js"></script>
+  <script src="/javascripts/navbar-setting-limited-toggle.js"></script>
+  <script src="/javascripts/close-shorts.js"></script>
+    
+</body>
+</html>

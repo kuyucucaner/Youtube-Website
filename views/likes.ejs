@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>CanerTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/likes.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+  <%- include('../views/partials/navbar') %>
+
+  <% if (user) { %>
+      <% if (likes.videos && likes.videos.length > 0) { %>
+          <div class="watch-likes-container" id="watch-likes-container">
+              <div class="watch-likes-left">
+                  <img src="<%= likes.videos[0].thumbnail_url %>" alt="watch-likes-image" class="watch-likes-image">
+                  <p class="watch-likes-title">Beğendiğim videolar</p>
+                  <p class="watch-likes-owner"><%= likes.videos[0].display_name %></p>
+                  <div class="watch-likes-date-length">
+                      <p class="watch-likes-length"><%= likes.totalCountlikes %> video Görüntülenme yok</p>
+                      <p class="watch-likes-date">En son <%= new Date(likes.videos[0].upload_date).toLocaleDateString('tr-TR') %> tarihinde</p>
+                  </div>
+                  <div class="watch-likes-button-container">
+                      <button class="watch-likes-download"><i class="bi bi-arrow-down"></i></button>
+                      <button class="watch-likes-setting"><i class="bi bi-three-dots-vertical"></i></button>
+                  </div>
+                  <div class="watch-likes-button-container">
+                      <button class="watch-likes-play"><i class="bi bi-play-fill"></i> Tümünü oynat</button>
+                      <button class="watch-likes-shuffle"><i class="bi bi-shuffle"></i> Karıştır</button>
+                  </div>
+              </div>
+              <div class="watch-likes-right">
+                  <% likes.videos.forEach(function(likesItem) { %>
+                      <a href="http://localhost:3000/video-detail/<%= likesItem.video_id %>" class="video-link-href">
+                          <div class="watch-likes-video-row">
+                              <img src="<%= likesItem.thumbnail_url %>" alt="likes-image" class="watch-likes-video-image">
+                              <div class="watch-likes-video-text">
+                                  <p class="watch-likes-video-title"><%= likesItem.title %></p>
+                                  <div class="watch-likes-information">
+                                      <p class="watch-likes-video-display"><%= likesItem.display_name %></p>
+                                      <p class="video-view"><%= likesItem.view_count %></p>
+                                      <div class="slider-item-publish-time"><%= likesItem.upload_date %></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  <% }); %>
+              </div>
+          </div>
+      <% } else { %>
+          <div class="watch-likes-container" id="watch-likes-container">
+              <p class="watch-likes-title">Beğenilenler listesi boş</p>
+          </div>
+      <% } %>
+  <% } else { %>
+      <div class="watch-likes-login">
+          <p class="watch-likes-login-text">Lütfen CanerTube'ye giriş yapınız!</p>
+          <button class="watch-likes-login-button" onclick="goToLogin()">Giriş yap</button>
+      </div>
+  <% } %>
+  
+  <%- include('../views/partials/sidebar') %>
+  
+  <script src="/javascripts/sidebar-likes-handle.js"></script>
+  <script src="/javascripts/voice-input.js"></script>
+  <script src="/javascripts/clear-input.js"></script>
+  <script src="/javascripts/navigate-to.js"></script>
+  <script src="/javascripts/google-login.js"></script>
+  <script src="/javascripts/time-difference-you.js"></script>
+  <script src='/javascripts/searched-videos.js'></script>
+
+  <script src="/javascripts/view-changer.js"></script>
+  <script src="/javascripts/navbar-setting-dropdown.js"></script>
+  <script src="/javascripts/navbar-profile-dropdown.js"></script>
+  <script src="/javascripts/navbar-setting-limited-toggle.js"></script>
+  <script src="/javascripts/close-shorts.js"></script>
+  
+</body>
+</html>

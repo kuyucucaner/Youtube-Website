@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CanerTube</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/video-detail.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ </head>
+  <body>
+    <%- include('../views/partials/navbar') %>
+    <%- include('../views/partials/sidebar') %>
+    <div class="video-detail-container">
+      <div class="video-detail-container-left">
+
+        <iframe src="<%= video[0].video_url%>" alt="video-detail-url" class="video-detail-url"></iframe>
+        <p class="video-detail-title"><%= video[0].title%></p>
+
+        <div class="video-detail-information">
+          <img src="<%= video[0].photo[0] %>" alt="video-detail-photo" class="video-detail-photo" >
+          <div class="video-detail-information-user">
+            <p class="video-detail-user"><%= video[0].display_name[0] %></p>
+            <p class="video-detail-subscripton-count">5.5 Mn abone</p>
+          </div>
+          <button class="video-detail-subscription-button">Abone Ol</button>
+          <div class="video-detail-like-dislike">
+            <button class="video-detail-like-button"><i class="bi bi-hand-thumbs-up"></i></button>
+            <button class="video-detail-dislike-button"><i class="bi bi-hand-thumbs-down"></i></button>
+          </div>
+
+          <button class="video-detail-share-button"><i class="bi bi-arrow-90deg-right"></i> Paylaş</button>
+          <button class="video-detail-download-button"><i class="bi bi-download"></i> İndir</button>
+          <button class="video-detail-more-button"><i class="bi bi-three-dots"></i></button>
+        
+        </div>
+
+
+        <div class="video-detail-description-container">
+          <div class="video-detail-description-date-view">
+            <p class="video-view" id="video-detail-descrtipton-view"><%= video[0].view_count%></p>
+            <p class="video-detail-date" id="video-detail-descrtipton-date"><%= video[0].upload_date%></p>
+          </div>
+          <p class="video-detail-description-text" id="video-description">
+            <span id="short-description"><%= video[0].description.substring(0,400) %></span>
+            <span id="full-description" style="display: none;"><%= video[0].description %></span>
+            <button id="more-btn">...daha fazla</button>
+            <button id="less-btn" style="display: none;">Daha az göster</button>
+          </p>
+        </div>
+        
+        <p class="video-detail-comment-count">5 Yorum</p>
+        <% comment.forEach(function(comment) { %>
+        <div class="video-detail-comment-container">
+          <div class="video-detail-comment-left">
+            <img src="<%= comment.photo %>" class="video-detail-comment-photo" alt="video-detail-comment-photo">
+          </div>
+          <div class="video-detail-comment-right">
+            <div class="video-detail-comment-date-name">
+              <p class="video-detail-comment-nickname">@<%= comment.user_name %></p>
+              <p class="video-detail-date" id="video-detail-comment-date"><%= comment.commented_at %></p>
+            </div>
+            <p class="video-detail-comment-text"><%= comment.comment_text %></p>
+            <div class="video-detail-comment-buttons">
+              <button class="video-detail-comment-like"><i class="bi bi-hand-thumbs-up"></i></button>
+              <button class="video-detail-comment-dislike"><i class="bi bi-hand-thumbs-down"></i></button>
+              <button class="video-detail-comment-answer">Yanıtla</button>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+
+      </div>
+
+      <div class="video-detail-container-right">
+        <% recommend.forEach(function(recommend) { %>
+          
+          <a href="http://localhost:3000/video-detail/<%= recommend.video_id %>" class="video-link-href">
+          <div class="video-detail-box">
+
+            <div class="video-detail-box-left">
+              <img alt="video-detail-box-image" class="video-detail-box-image" src="<%= recommend.thumbnail_url %>">
+            </div>
+            <div class="video-detail-box-right">
+              <p class="video-detail-box-title"><%= recommend.title %></p>
+              <p class="video-detail-box-channel"><%= recommend.display_name %></p>
+              <div class="video-detail-box-date-view">
+                <p class="video-view" id="video-detail-view"><%= recommend.view_count %></p>
+                <p class="video-detail-date" id="video-detail-recommend-date"><%= recommend.upload_date %></p>
+              </div>
+            </div>
+          </div>
+        </a>
+          <% }); %>
+
+      </div>
+
+    </div>
+    <script src='/javascripts/sidebar-home-handle.js'></script>
+    <script src='/javascripts/voice-input.js'></script>
+    <script src='/javascripts/clear-input.js'></script>
+    <script src='/javascripts/navigate-to.js'></script>
+    <script src='/javascripts/google-login.js'></script>
+    <script src='/javascripts/time-difference-video-detail.js'></script>
+    <script src='/javascripts/view-changer.js'></script>
+    <script src='/javascripts/searched-videos.js'></script>
+    <script src='/javascripts/close-shorts.js'></script>
+    <script src='/javascripts/more-less-text.js'></script>
+    <script src='/javascripts/navbar-setting-dropdown.js'></script>
+    <script src='/javascripts/navbar-profile-dropdown.js'></script>
+    <script src='/javascripts/navbar-setting-limited-toggle.js'></script>
+
+  </body>
+</html>

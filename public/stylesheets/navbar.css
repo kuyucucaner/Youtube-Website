@@ -1,0 +1,799 @@
+body {
+    margin: 0;
+}
+.navbar {
+  position: fixed; /* Navbar'ın sabit olmasını sağlar */
+  top: 0; /* Navbar'ı ekranın üstüne hizalar */
+  background-color: #0f0f0f;
+  padding: 7px 0;
+  transition: margin-left 0.5s;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%; /* Navbar'ı ekranın tam genişliğinde yapar */
+  z-index: 1000; /* Diğer elementlerin üstünde gözükmesini sağlar */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+/* SİDEBAR */
+.navbar-sidebar-toggle{
+    background-color: rgb(0, 0, 0 ,0.1);
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin-left:15px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding:5px 10px;
+
+}
+.navbar-sidebar-toggle:hover{
+    background-color: rgba(56, 56, 56, 0.5);
+}
+/* YOUTUBE LOGO STYLE */
+.navbar-logo-container {
+    position: relative;
+    display: inline-block;
+    align-items: center; 
+}
+
+.navbar-logo-text {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 10px; /* Logonun metniyle arasındaki boşluğu azalttım */
+    display: flex;
+    align-items: center; /* Logonun dikey hizalamasını ortala */
+}
+
+.navbar-country-code {
+    position: absolute;
+    bottom:10px;
+    right: -15px; /* Sağa olan mesafeyi azalttım */
+    font-size: 10px;
+    color: #aaaaaa;
+    letter-spacing: 0.03em;
+}
+
+.fa-youtube {
+    color: red; /* YouTube simgesinin rengini kırmızı olarak belirttim */
+    margin-right: 2px;
+    font-size: 28px;
+    vertical-align: middle; /* Simgenin dikey hizalamasını ortala */
+    margin-bottom: -2px; /* Simgenin biraz aşağı inmesi için negatif bir alt boşluk ekledim */
+}
+/* ---------------------------------- */
+
+/* SEARCH İNPUT STYLE */
+.navbar-center {
+    display: flex;
+    align-items: center;
+}
+.navbar-search-container {
+    position: relative;
+    display: inline-block; /* Arama kutusu ve butonu yatay hizalamak için */
+    align-items: center;
+    margin-left: 20px;}
+
+.navbar-search {
+    width:100%;
+    padding: 10px 40px 10px 10px; /* Sağ taraf padding'i artırıldı */
+    border: 1px solid #303030;
+    border-radius: 20px;
+    background-color: #121212;
+    font-size: 14px;
+    color: #b3b3b3;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Border renk değişimini ekledim */
+    position: relative; /* Göreceli pozisyon belirledim */
+
+}
+.navbar-search:focus {
+    outline: none; /* Odaklandığında varsayılan kenarlığı kaldırdım */
+    border-color: #0064c2; /* Odaklandığında border rengini değiştirdim */
+}
+.navbar-search-button {
+    position: absolute; /* Butonun konumunu ayarlamak için */
+    top: 0;
+    right: 0;
+    height: 100%; /* Butonun yüksekliği, arama kutusu ile aynı olacak */
+    padding: 0 25px; /* Buton içeriğinin kenar boşlukları */
+    background-color: #222222;
+    border-radius: 0px 20px 20px 0px; /* Sağ üst ve alt köşelerin yarıçapı 20px */
+    border: none;
+    cursor: pointer;
+    
+}
+.navbar-search-button:hover::after {
+    content: "Ara";
+    position: absolute;
+    bottom: -50px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left: 50%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+.bi-search {
+    font-size: 1.3em;
+    color: #cccccc;
+    transition: color 0.3s;
+}
+.bi-mic-fill{
+    font-size: 1.3em;
+    color: #ffffff;
+}
+.navbar-search-button-mic{
+    background-color: #272727;
+    padding:10px 13px;
+    border-radius: 50%;
+    margin-left:15px;
+    border:none;
+    cursor: pointer;
+    position: relative;
+}
+.navbar-search-button-mic:hover::after {
+  content: "Sesle arama yapın";
+  position: absolute;
+  bottom: -50px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+  left: 50%; /* İstediğiniz yatay konumu belirtin */
+  transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+  border-radius: 4px;
+  background-color: rgb(119, 119, 119); /* İstenilen arka plan rengi */
+  color:white;
+  font-size: 12px;
+  padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+  white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+}
+.navbar-search-button-mic.listening {
+    background-color: #494949; /* Aktif olduğunda arkaplan rengi */
+}
+.navbar-clear-button {
+    position: absolute;
+    top: 50%;
+    right:80px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    color: white;
+    font-size: 20px;
+}
+
+.navbar-search:focus + .navbar-clear-button {
+    display: block;
+}
+/* ---------------------------------- */
+
+/* LOGİN BUTTON */
+.navbar-login-button{
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0 ,0.1);
+  color:rgb(63, 166, 226);
+  border:1px solid #303030;
+  cursor: pointer;
+  font-size: 15px;
+}
+.navbar-login-button:hover{
+  background-color: rgba(84, 172, 223, 0.3);
+
+}
+.navbar-login-button i {
+  font-size: 17px;
+}
+/* ---------------------------------- */
+/* SETTİNG BUTTON */
+.navbar-setting-button{
+  background-color: rgb(0, 0, 0 ,0.1);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+}
+.navbar-setting-button:hover::after {
+  content: "Ayarlar";
+  position: absolute;
+  bottom: -60px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+  left: 50%; /* İstediğiniz yatay konumu belirtin */
+  transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+  border-radius: 4px;
+  background-color: rgb(119, 119, 119); /* İstenilen arka plan rengi */
+  color:white;
+  font-size: 12px;
+  padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+  white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+
+}
+/* Profile Photo */
+.navbar-profile-photo{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    margin-right: 25px;
+    cursor: pointer;
+}
+/* Announcement */
+.navbar-announcement-button{
+    background-color: #27272700;
+    border-radius: 50%;
+    border:none;
+    cursor: pointer;
+    position: relative;
+}
+.bi-bell{
+    font-size: 1.3em;
+    color: #ffffff;
+    padding: 10px;
+}
+#announcement-container {
+  display: none;
+}
+
+#announcement-container.open {
+  display: block;
+}
+
+.navbar-announcement-button:hover::after {
+    content: "Bildirimler";
+    position: absolute;
+    bottom: -50px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left: 50%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+  /* Create Video */
+  .bi-camera-video{
+    font-size: 1.3em;
+    color: #ffffff;
+    padding: 10px;
+  }
+  .bi-camera-video:hover{
+    background-color: rgb(170, 170, 170 ,0.3);
+    border-radius: 50%;
+  }
+  .navbar-create-button{
+    background-color: #27272700;
+    border-radius: 50%;
+    border:none;
+    cursor: pointer;
+    position: relative;
+}
+.navbar-create-button:hover::after {
+    content: "Oluştur";
+    position: absolute;
+    bottom: -50px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left: 50%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+ 
+  .navbar-setting-dropdown-button{
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+  .navbar-setting-dropdown-menu {
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    top: 50px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    right:40px;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-setting-dropdown-view{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    top:50px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left:21.5em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-profile-dropdown-view{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    bottom:80px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    right:12.9em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-profile-dropdown-account{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    top:165px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    right:9.7em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width:260px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-setting-dropdown-language{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    top:95px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left:21.5em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-profile-dropdown-language{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    bottom:145px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    right:12.9em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-setting-dropdown-limited{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    top:140px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left:21.5em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-profile-dropdown-limited{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    bottom:90px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    right:12.9em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-setting-dropdown-country{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    top:185px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    left:21.5em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-profile-dropdown-country{
+    display: none;
+    position: absolute;
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    bottom:60px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+    right:12.9em;
+    border-radius: 10px;
+    padding-top:8px;
+    padding-bottom: 8px;
+    background-color: #272727;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .navbar-setting-dropdown-view-text{
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+    color: #c5c4c4;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .navbar-setting-dropdown-menu-top,.navbar-setting-dropdown-menu-middle{
+    border-bottom: 1px solid gray;
+    width: 100%;
+  }
+  .bi-chevron-right{
+    margin-left: auto;
+    padding-left: 15px;
+  }
+  .navbar-setting-dropdown-button i {
+    font-size: 18px;
+    margin-right:15px;
+  }
+  .navbar-setting-dropdown-button:hover {
+    background-color: #414141;
+  }
+  .show , .view-show , .language-show ,.limited-show ,.country-show ,.account-show{
+    display: block;
+}
+
+/* toggle limited */
+.navbar-setting-dropdown-limited-text{
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+  color: #dadada;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-setting-dropdown-limited-toggle-label{
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 10px;
+  color: #969696;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  order: 2; /* Etiketi input'tan sonra göster */
+
+}
+.navbar-setting-dropdown-limited-toggle-container {
+  position: relative;
+  display: flex;
+  margin-left:20px;
+  flex-direction: row-reverse; /* Öğeleri ters yönde sırala (input sağda, label solda) */
+}
+
+.navbar-setting-dropdown-limited-toggle-input {
+  display: none; /* Checkbox'ı gizle */
+  order: 1; /* Input'u etiketten önce göster */
+
+}
+
+/* Slider görünümü */
+.navbar-setting-dropdown-limited-toggle-label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px; /* Slider genişliği */
+  height: 12px; /* Slider yüksekliği */
+  background-color: #ccc; /* Kapalı durum için arka plan rengi */
+  border-radius: 6px; /* Yuvarlatılmış köşeler */
+  transition: background-color 0.3s; /* Geçiş efekti */
+}
+
+/* Slider açık durumda */
+.navbar-setting-dropdown-limited-toggle-input:checked + .navbar-setting-dropdown-limited-toggle-label:before {
+  background-color: #f32121; /* Açık durum için arka plan rengi */
+}
+
+/* Slider topuz */
+.navbar-setting-dropdown-limited-toggle-label:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 10px; /* Topuz genişliği */
+  height: 10px; /* Topuz yüksekliği */
+  background-color: white; /* Topuz rengi */
+  border-radius: 50%; /* Yuvarlatılmış köşeler */
+  transition: transform 0.3s; /* Geçiş efekti */
+}
+
+/* Slider açık durumda topuzun konumu */
+.navbar-setting-dropdown-limited-toggle-input:checked + .navbar-setting-dropdown-limited-toggle-label:after {
+  transform: translateX(10px); /* Topuzu kaydır */
+}
+
+/* annoucuentmet style  */
+.navbar-announcement-container{
+  background-color: #282828;
+  top:60px;
+  right: 100px;
+  height: 620px;
+  width:480px;
+  border-radius: 10px;
+  position: absolute;
+}
+.navbar-announcement-title{
+  display: flex;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  align-items: center;
+}
+.navbar-announcement-title-text{
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: lighter;
+  margin-left: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#bi-gear-announcement{
+  margin-left: auto;
+  margin-right: 15px;
+  font-size: 20px;
+  color: #c5c4c4;
+}
+.navbar-announcement-body{
+  text-align: center;
+  margin-top: 150px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#announcement-bell{
+  font-size: 100px;
+  color: #969696;
+}
+.navbar-announcement-body-title{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #aaaaaa;
+}
+.navbar-announcement-body-text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #aaaaaa;
+}
+.navbar-create-container{
+  display: none;
+  position: absolute;
+  transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+  top:60px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+  right: 90px;
+  border-radius: 10px;
+  padding-top:8px;
+  padding-bottom: 8px;
+  background-color: #272727;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.navbar-profile-container{
+  display: none;
+  position: absolute;
+  transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+  top:1px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+  right: -60px;
+  border-radius: 10px;
+  padding-top:8px;
+  padding-bottom: 8px;
+  background-color: #272727;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+#navbar-profile-container.open {
+  display: block;
+}
+.navbar-profile-overflow{
+  overflow-y: scroll;
+  height: 84vh;
+}
+#bi-bell-button:hover{
+  background-color: rgb(170, 170, 170 ,0.3);
+  border-radius: 50%;
+}
+#navbar-create-container.open {
+  display: block;
+}
+.navbar-profile-information{
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 8px;
+  padding-right: 50px;
+}
+.navbar-profile-information-left{
+  margin-left: auto;
+}
+.navbar-profile-information-right{
+  margin-right: auto;
+  margin-top: -15px;
+  margin-left: -10px;
+}
+.navbar-profile-photo{
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+.navbar-profile-name{
+  color: #f1f1f1;
+  font-family: 'Roboto', sans-serif;
+}
+.navbar-profile-nickname{
+  color: #f1f1f1;
+  font-family: 'Roboto', sans-serif;
+  margin-top: -10px;
+  font-size: 16px;
+}
+.navbar-profile-detail-button{
+  color:#50a1e7;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-top:-5px;
+  padding-bottom: 15px;
+}
+.navbar-profile-google , .navbar-profile-youtube{
+  border-bottom: 1px solid gray;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+
+
+  /* Small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+       padding: 4px 0;
+     }
+    .navbar-search-container {
+       margin-left: 10px;
+     }
+    .navbar-search {
+       width: 300px;
+     }
+    .navbar-search-button {
+       padding: 0 15px;
+     }
+    .navbar-right button {
+       margin-right: 10px;
+     }
+    .navbar-profile-photo {
+       width: 25px;
+       height: 25px;
+     }
+   }
+    .navbar-profile-change-account-header{
+      border-bottom: 1px solid gray;
+      padding-right:20px;
+      padding-left: 20px;
+    }
+  .navbar-profile-change-account-body-bottom{
+      border-bottom: 2px solid gray;
+
+    }
+    .navbar-profile-change-account-name{
+      color: white;
+      font-size: 12px;
+      font-family: 'Roboto',sans-serif;
+    }
+    .navbar-profile-change-account-email{
+      color: #aaaaaa;
+      font-size: 11px;
+      font-family: 'Roboto',sans-serif;
+    }
+    .navbar-profile-change-account-body-top{
+      display: flex;
+      padding-left: 20px;
+    }
+    .navbar-profile-change-current-profile-photo{
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top:10px;
+      margin-right: 10px;
+    }
+    .navbar-profile-change-account-body-top:hover{
+      background-color: rgb(170, 170, 170,0.3);
+      cursor: pointer;
+    }
+    .navbar-profile-change-account-nickname{
+      color:white;
+      font-size: 14px;
+      font-family: 'Roboto' , sans-serif;
+      margin-top: -4px;
+    }
+.navbar-profile-change-account-count-subscriber{
+  color:rgb(145, 145, 145);
+  font-size: 12px;
+  font-family: 'Roboto' , sans-serif;
+  margin-top: -4px;
+}
+.navbar-profile-change-account-body-right{
+  margin-top: 20px;
+  color: white;
+  margin-left: auto;
+  margin-right: 15px;
+  
+}
+.navbar-profile-account-button{
+  width: 100%;
+}
+
+#show-all-accounts{
+  margin-bottom: 10px;
+  border-bottom: 2px solid gray;
+}
+.navbar-profile-change-account-other-text{
+  color: white;
+  font-size: 14px;
+  padding-left: 20px;
+  font-family: 'Roboto',sans-serif;
+}
+   /* Medium screens (max-width: 992px) */
+   @media (max-width: 992px) {
+    .navbar-search-container {
+       margin-left: 15px;
+     }
+    .navbar-search {
+       width: 400px;
+     }
+    .navbar-right button {
+       margin-right: 15px;
+     }
+   }
+   
+   /* Large screens (min-width: 1200px) */
+   @media (min-width: 1200px) {
+    .navbar-search-container {
+       margin-left: 20px;
+     }
+    .navbar-search {
+       width: 500px;
+     }
+    .navbar-right button {
+       margin-right: 20px;
+     }
+   }

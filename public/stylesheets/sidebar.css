@@ -1,0 +1,113 @@
+.sidebar {
+    height: 100vh; /* Full viewport height */
+    width: 70px; /* Use a relative unit for responsiveness */
+    margin-top: 55px;
+    position: fixed; /* Fix sidebar to the left */
+    z-index: 100; /* Ensure sidebar stays on top */
+    top: 0;
+    left: 0;
+    background-color: #0f0f0f; /* Light gray background */
+    overflow-x: auto; /* Hide horizontal scrollbar */
+}
+
+.sidebar-links {
+    padding: 12px 1px 14px 1px; /* Add padding for better appearance */
+    display: block; /* Display each link as a block */  
+}
+.sidebar-links-second , .sidebar-links-third, .sidebar-links-fourth, .sidebar-links-fifth , .sidebar-links-sixth ,.sidebar-links-seventh{
+    display: none;
+}
+.sidebar-router-large {
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    margin-left: 12px;
+    margin-right: 12px;
+    align-items: center;
+    padding: 12px;
+}
+
+.sidebar-router-large-channel-name{
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    margin-left: 12px;
+    margin-right: 12px;
+    align-items: center;
+    padding: 12px;
+}
+.sidebar-router-large i {
+    margin-right: 27px;
+    font-size: 18px;
+}
+
+.sidebar-router-large:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.sidebar-router-tiny {
+    text-decoration: none;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İkon ve metni dikey olarak hizalar */
+    text-align: center; /* Metni yatay olarak hizalar */
+}
+
+.fa-house {
+    margin-bottom: 5px; /* İkon ile metin arasında bir boşluk bırakır */
+    font-size: 14px;
+}
+
+.sidebar-router-tiny:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+.sidebar-links-second , .sidebar-links-third , .sidebar-links-fourth, .sidebar-links-fifth ,.sidebar-links-sixth ,.sidebar-links-seventh{
+    border-top: 1px solid gray;
+    margin-bottom: 10px; 
+    padding-top:10px;
+}
+.sidebar-links-seventh{
+    padding-bottom: 140px;
+}
+.sidebar-links-information{
+    color: #9baaaa;
+    font-size: 12px;
+    font-family: 'Roboto' , sans-serif;
+    cursor: pointer;
+}
+.sidebar-links-information-company{
+    color: #888b8b;
+    font-size: 12px;
+    font-family: 'Roboto' , sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+    
+}
+.sidebar-router-large-text{
+    font-weight: bold;
+    color: white;
+    margin-left:15px;
+    padding-top:-15px;
+    padding-bottom:-10px;
+}
+/* Responsive design */
+
+.sidebar-router-large-image{
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.sidebar-links-third-channel{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

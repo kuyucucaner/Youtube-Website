@@ -1,0 +1,257 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+
+}
+.shorts-container{
+    width: 25%;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom:3em;
+}
+.shorts-video-container {
+    position: relative;
+    width: 100%;
+
+  }
+  .shorts-video {
+    width: 100%;
+    height: 79.5vh;
+    border-radius: 10px;
+    /* border: none; */
+
+  }
+  .shorts-video-container-bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    color: white;
+  }
+  .shorts-video-container-top
+ {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:10px;
+    width: 98%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    color: white;
+  }
+  
+  .shorts-play,
+  .shorts-voice {
+    background-color: rgb(0,0,0,0.2);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding:10px;
+    margin-left:15px;
+  }
+  
+  .shorts-play i,
+  .shorts-voice i {
+    font-size: 1.5rem;
+    color:#ffffff;
+  }
+  
+  .shorts-video-container-channel,
+  .short-video-container-description {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+
+  .shorts-channel-image{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+  }
+  .shorts-video-container-channel{
+    display: flex;
+    flex-direction: row;
+    margin-bottom:60px;
+    align-items: center; /* Elemanları dikey olarak ortalar */
+
+  }
+.shorts-channel-name{
+  color: white;
+  margin-left:7px;
+  font-weight: 800;
+}
+.shorts-description{
+  color: white;
+  padding-left:8px;
+  padding-right:8px;
+  padding-bottom:5px;
+}
+.shorts-channel-subscribe {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  padding:10px;
+  border-radius: 20px;
+  margin-left:7px;
+}
+  /* SAĞ */
+  .shorts-button-container{
+    margin-left:15px;
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column;
+  justify-content: flex-end; /* Distribute buttons horizontally */
+  align-items: flex-end; /* Align buttons at the bottom */
+  }
+
+  .shorts-button-like,
+  .shorts-button-dislike,
+  .shorts-button-comment,
+  .shorts-button-share,
+  .shorts-button-setting {
+    background-color: #272727;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding:15px;
+    position: relative;
+
+  }
+  .shorts-button-like i,
+  .shorts-button-dislike i,
+  .shorts-button-comment i ,
+  .shorts-button-share i ,
+  .shorts-button-setting i {
+    color: #f1f1f1;
+    font-size: 1.2rem;
+  }
+  .shorts-button-voice{
+    width: 40px;
+    height: 40px;
+    margin-right:5px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .shorts-button-container p{
+    color:white;
+  }
+  .shorts-button-like-text{
+    font-size: 14px;
+    text-align: center;
+    margin-top:5px;
+  }
+  .shorts-button-dislike-text{
+    font-size: 14px;
+    text-align: center;
+    margin-top:5px;
+  }
+  .shorts-button-comment-text{
+    font-size: 14px;
+    text-align: center;
+    margin-top:5px;
+  }
+  .shorts-button-share-text{
+    font-size: 14px;
+    text-align: center;
+    margin-top:5px;
+  }
+  .shorts-button-setting{
+    margin-bottom:15px;
+  }
+  .shorts-button-like:hover::after {
+    content: "Bunu Beğendim";
+    position: absolute;
+    right: 40%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119, 0.8); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+  .shorts-button-dislike:hover::after {
+    content: "Bunu Beğenmedim";
+    position: absolute;
+    right: 15%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119, 0.8); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+  .shorts-button-comment:hover::after {
+    content: "Yorumlar";
+    position: absolute;
+    right: 70%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119, 0.8); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+  .shorts-button-share:hover::after {
+    content: "Paylaş";
+    position: absolute;
+    right: 90%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119, 0.8); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+  
+  .shorts-button-voice-container:hover::after {
+    content: "Orijinal Ses";
+    position: absolute;
+    right: 39.7%; /* İstediğiniz yatay konumu belirtin */
+    transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+    border-radius: 4px;
+    background-color: rgb(119, 119, 119, 0.8); /* İstenilen arka plan rengi */
+    color:white;
+    font-size: 12px;
+    padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+    white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+  }
+  .shorts-button-setting:hover{
+    background-color:#424242;
+  }
+  .shorts-button-like:hover{
+    background-color:#424242;
+  }
+  .shorts-button-dislike:hover{
+    background-color:#424242;
+  }
+  .shorts-button-comment:hover{
+    background-color:#424242;
+  }
+  .shorts-button-share:hover{
+    background-color:#424242;
+  }
+  .shorts-play:hover{
+    background-color: rgba(61, 61, 61, 0.3); /* İstenilen arka plan rengi */
+  }
+  .shorts-voice:hover{
+    background-color: rgba(61, 61, 61, 0.3); /* İstenilen arka plan rengi */
+  }

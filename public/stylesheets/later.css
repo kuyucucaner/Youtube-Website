@@ -1,0 +1,189 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+    font-family: 'Roboto' , sans-serif;
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.watch-later-container{
+    margin-left: 6em;
+    margin-top: 5.6em;
+    cursor: pointer;
+    margin-right: 3em;
+    display: flex;
+
+}
+.watch-later-left{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 85vh;
+    background:linear-gradient(to bottom,#353535,#686868,#dedede);
+    border-radius: 10px;
+    align-items: center;
+    margin-right: 10px;
+}
+.watch-later-image{
+    min-width: 85%;
+    max-width: 85%;
+    min-height: 180px;
+    max-height: 180px;
+    margin-top:20px;
+    border-radius: 15px;
+}
+.watch-later-title{
+    font-size: 26px;
+    font-weight: bold;
+    color:white;
+    margin-right: auto;
+    margin-left:30px;
+}
+.watch-later-owner{
+    margin-top: -1em;
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+    margin-right: auto;
+    margin-left:30px;
+}
+.watch-later-date-length , .watch-later-button-container {
+    display: flex;
+    flex-direction: row;    
+    width: 100%;
+    align-items: center;
+}
+
+.watch-later-length{
+    margin-top:0;
+    font-size: 13px;
+    color:#aaaaaa;
+    margin-right: auto;
+    margin-left:30px;
+}
+.watch-later-date{
+    margin-top:0;
+    font-size: 13px;
+    color:#aaaaaa;
+    margin-right: auto;
+}
+.watch-later-download{
+    border: none;
+    background-color: #aaaaaa6f;
+    padding:10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+.watch-later-setting{
+    border: none;
+    background-color: #aaaaaa6f;
+    padding:10px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+.watch-later-play{
+    border: none;
+    background-color: #ffffff6f;
+    padding:10px 30px;
+    font-size: 13px;
+    color: black;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.watch-later-shuffle{
+    border: none;
+    background-color: #aaaaaa6f;
+    padding:10px 30px;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.watch-later-right{
+     width: 70%;
+    margin-left: 10px;
+
+}
+.watch-later-video-row:hover{
+    background-color: #aaaaaa33;
+    border-radius: 10px;
+}
+.watch-later-video-row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding: 10px;
+
+}
+.watch-later-video-image{
+    min-width: 200px;
+    max-width: 200px;
+    min-height: 120px;
+    max-height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.watch-later-video-title{
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+    margin-top: 0;    
+    margin-left:10px;
+}
+.watch-later-information{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+.watch-later-video-display{
+    font-size: 12px;
+    margin-top: 0;
+    color: #aaaaaa;
+}
+.video-view , .slider-item-publish-time{
+    font-size: 12px;
+    margin-top: 0;
+    color: #aaaaaa;
+    margin-left: 15px;
+}
+
+
+
+.watch-later-login-text{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.watch-later-login-button{
+    color: white;
+    background-color: #272727;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s background-color ease;
+}
+.watch-later-login-button:hover {
+    background-color: #444444;
+}
+.watch-later-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20em;
+    text-align: center;
+    align-items: center;
+}

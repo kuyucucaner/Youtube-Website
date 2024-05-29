@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>CanerTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/list.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+  <%- include('../views/partials/navbar') %>
+
+  <% if (user) { %>
+      <div class="watch-list-container" id="watch-list-container">
+          <p class="watch-list-title">Oynatma listeleri</p>
+          <% if (list && list.length > 0) { %>
+              <div class="watch-list-left">
+                  <% list.forEach(function(listItem) { %>
+                      <div class="watch-list-video-container">
+                          <img src="<%= listItem.latest_video_image %>" alt="watch-list-video-image" class="watch-list-video-image">
+                          <p class="watch-list-video-title"><%= listItem.list_name %></p>
+                          <p class="watch-list-video-length"><i class="bi bi-list-ul"></i> <%= listItem.video_count %> video</p>
+                          <p class="watch-list-video-text">Oynatma listesinin tamamını görüntüle</p>
+                      </div>
+                  <% }); %>  
+              </div>
+          <% } else { %>
+              <p class="watch-list-video-title">Bu liste boş</p>
+          <% } %>
+      </div>
+  <% } else { %>
+      <div class="watch-list-login">
+          <p class="watch-list-login-text">Lütfen CanerTube'ye giriş yapınız!</p>
+          <button class="watch-list-login-button" onclick="goToLogin()">Giriş yap</button>
+      </div>
+  <% } %>
+  
+  <%- include('../views/partials/sidebar') %>
+  
+  <script src="/javascripts/sidebar-list-handle.js"></script>
+  <script src="/javascripts/voice-input.js"></script>
+  <script src="/javascripts/clear-input.js"></script>
+  <script src="/javascripts/navigate-to.js"></script>
+  <script src="/javascripts/google-login.js"></script>
+  <script src="/javascripts/time-difference.js"></script>
+  <script src='/javascripts/searched-videos.js'></script>
+
+  <script src="/javascripts/view-changer.js"></script>
+  <script src="/javascripts/navbar-setting-dropdown.js"></script>
+  <script src="/javascripts/navbar-profile-dropdown.js"></script>
+  <script src="/javascripts/navbar-setting-limited-toggle.js"></script>
+  <script src="/javascripts/close-shorts.js"></script>
+  
+  
+</body>
+</html>

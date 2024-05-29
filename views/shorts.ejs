@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CanerTube</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/shorts.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ </head>
+  <body>
+    <%- include('../views/partials/navbar') %>
+    <%- include('../views/partials/sidebar') %>
+    <% shorts.forEach(function(short) { %>
+    <div class="shorts-container">
+      <div class="shorts-video-container">
+        <iframe class="shorts-video"  src='https://www.youtube.com/embed/kp7WDJsy0Ng' alt="short-video"></iframe>
+        <div class="shorts-video-container-top">
+            <button class="shorts-play"><i class="bi bi-play-fill"></i></button>
+            <button class="shorts-voice"><i class="bi bi-volume-up-fill"></i></button>
+        </div>
+        <div class="shorts-video-container-bottom">
+          <div class="shorts-video-container-channel">
+            <img class="shorts-channel-image" src="<%= short.photo%>" alt="shorts-channel-image">
+            <p class="shorts-channel-name">@<%= short.display_name %></p>
+            <button class="shorts-channel-subscribe">Abone Ol</button>
+          </div>
+          <div class="short-video-container-description">
+            <p class="shorts-description"><%= short.description %></p>
+          </div>
+        </div>
+        </div>
+        <div class="shorts-button-container">
+            <div class="shorts-button-like-container">
+                <button class="shorts-button-like"><i class="bi bi-hand-thumbs-up-fill"></i></button>
+                <p class="shorts-button-like-text"><%= short.likes %></p>
+            </div>
+            <div class="shorts-button-dislike-container">
+              <button class="shorts-button-dislike"><i class="bi bi-hand-thumbs-down-fill"></i></button>
+              <p class="shorts-button-dislike-text">Beğenme</p>
+            </div>
+            <div class="shorts-button-comment-container">
+              <button class="shorts-button-comment"><i class="bi bi-chat-right-text-fill"></i></button>
+              <p class="shorts-button-comment-text">Yorumlar</p>
+            </div>
+            <div class="shorts-button-share-container">
+              <button class="shorts-button-share"><i class="bi bi-send-arrow-up-fill"></i></button>
+              <p class="shorts-button-share-text">Paylaş</p>
+            </div>
+            <div class="shorts-button-setting-container">
+              <button class="shorts-button-setting"><i class="bi bi-three-dots-vertical"></i></button>
+            </div>
+            <div class="shorts-button-voice-container">
+              <img class="shorts-button-voice" src="https://yt3.googleusercontent.com/ytc/AIdro_nPxi9xxf4Ud5OU4yRfUlhGPeFINWnzxsehLrhW737aKkE=s900-c-k-c0x00ffffff-no-rj" alt="short-owner">
+            </div>
+            
+        </div>
+      </div>
+      
+      <% }); %>
+    </div>
+    <script src='/javascripts/sidebar-home-handle.js'></script>
+    <script src='/javascripts/voice-input.js'></script>
+    <script src='/javascripts/clear-input.js'></script>
+    <script src='/javascripts/navigate-to.js'></script>
+    <script src='/javascripts/searched-videos.js'></script>
+
+    <script src='/javascripts/google-login.js'></script>
+    <script src='/javascripts/time-difference.js'></script>
+    <script src='/javascripts/view-changer.js'></script>
+  </body>
+</html>

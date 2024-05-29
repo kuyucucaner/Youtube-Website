@@ -1,0 +1,167 @@
+body{
+    background-color: #0f0f0f;
+}
+.subscriptions-video-container{
+    margin-left:5.5em;
+    margin-top:5.5em;
+}
+.video-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.video-header-left {
+    margin-right: auto; 
+
+}
+.video-header-right {
+    margin-left: auto; 
+    align-items: center;
+    display: flex; /* Yeni eklenen özellik */
+
+}
+.video-header-title{
+    color: white;
+    font-size:18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.video-header-manage{
+    color: #2c8cff;
+    font-size: 14px;
+    background-color: rgb(15,15,15,0.1);
+    border: none;
+    padding:10px;
+    cursor:pointer;
+    margin-right: 15px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom:5px;
+}
+.video-header-table{
+    color: #ffffff;
+    font-size: 26px;
+    background-color: rgb(15,15,15,0.1);
+    border: none;
+    padding:10px;
+    cursor:pointer;
+    margin-right: 15px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.video-header-list{
+    color: #ffffff;
+    font-size: 18px;
+    background-color: rgb(15,15,15,0.1);
+    border: none;
+    padding:10px;
+    cursor:pointer;
+    margin-right: 35px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+.video-row-first {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+  }
+
+  .video-box{
+    width: 24%; /* Adjust as needed */
+    margin-bottom: 20px;
+    cursor: pointer;
+
+  }
+  .video-content{
+    display: flex;
+    margin-top:10px;
+    
+  }
+  .video-box-left {
+    flex: 0 0 auto; /* Sabit genişlik */
+    margin-right: 10px; /* İsteğe bağlı boşluk */
+  }
+  
+  .video-box-right {
+    flex-grow: 1; /* İçeriği genişletmek için */
+  }
+  .video-image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .video-title{
+    font-size: 16px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+  .video-channel-title {
+    font-size: 15px; /* Kanal başlığı font büyüklüğü */
+    color: #aaaaaa; /* Kanal başlığı rengi */
+    margin-top: -8px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .video-box-right-line{
+    display: flex;
+    margin-top: -25px;
+    font-family: 'Roboto', sans-serif;
+
+  }
+  .video-publish-time {
+    color: #aaaaaa; /* Yayın zamanı rengi */
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+
+  }
+  .video-view{
+    color: #aaaaaa;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+
+  }
+.video-channel-image{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+
+}
+
+.you-login-text{
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.you-login-button{
+  color: white;
+  background-color: #272727;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 1s background-color ease;
+}
+.you-login-button:hover {
+  background-color: #444444;
+}
+.you-login-container{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20em;
+  text-align: center;
+  align-items: center;
+}
+.video-link-href{
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}

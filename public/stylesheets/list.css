@@ -1,0 +1,93 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+    font-family: 'Roboto' , sans-serif;
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.watch-list-container{
+    margin-left: 6em;
+    margin-top: 5.6em;
+    cursor: pointer;
+    margin-right: 3em;
+
+}
+.watch-list-title{
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+}
+.watch-list-left{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.watch-list-video-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.watch-list-video-image{
+    min-width: 250px;
+    min-height: 140px;
+    object-fit: cover;
+    border-radius: 15px;
+    position: relative;
+
+}
+.watch-list-video-length{
+    color: white;
+    background-color: #362f27cb;
+    font-size: 13px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Roboto' , sans-serif;
+    position: absolute;
+    top:21em;
+    margin-left:13em;
+    padding: 8px 20px;
+  }
+.watch-list-video-title{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.watch-list-video-text{
+    color: #aaaaaa;
+    font-size: 14px;
+    margin-top: 0;
+}
+
+
+
+
+.watch-list-login-text{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.watch-list-login-button{
+    color: white;
+    background-color: #272727;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s background-color ease;
+}
+.watch-list-login-button:hover {
+    background-color: #444444;
+}
+.watch-list-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20em;
+    text-align: center;
+    align-items: center;
+}

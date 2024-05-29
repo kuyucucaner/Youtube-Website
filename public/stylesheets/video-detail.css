@@ -1,0 +1,256 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+
+}
+.video-detail-container{
+    margin-top:5em;
+    margin-left:6em;
+    margin-right: 6em;
+    display: flex;
+    flex-direction: row;
+    margin-bottom:5em;
+}
+.video-detail-container-left{
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+}
+.video-detail-url{
+    height: 30em;
+    border-radius: 15px;
+    border: none;
+}
+.video-detail-title{
+    font-size: 19px;
+    font-weight: bold;
+    font-family: 'Roboto' , sans-serif;
+    color: white;
+}
+.video-detail-information{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top:-1.5em;
+}
+.video-detail-photo{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.video-detail-user{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Roboto' , sans-serif;
+    color: white;
+    padding-top:5px;
+}
+.video-detail-subscripton-count{
+    font-size: 13px;
+    font-family: 'Roboto' , sans-serif;
+    color: rgb(167, 167, 167);
+    margin-top:-10px;
+}
+.video-detail-subscription-button{
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    margin-left:2em;
+    border: none;
+    padding:10px 15px;
+    margin-top:5px;
+}
+.video-detail-like-dislike{
+    margin-left: auto;
+    background-color: #272626;
+    border:none;
+    border-radius: 20px;
+    padding:7px 15px;
+    margin-right:15px;
+}
+.video-detail-like-button{
+    border: none;
+    background-color: #27262600;
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto' , sans-serif;
+    font-weight: bold;
+    border-right: 1px solid gray;
+    cursor: pointer;
+    padding:1px 12px;
+
+}
+.video-detail-dislike-button{
+    border: none;
+    background-color: #27262600;
+    color: white;
+    font-size: 18px;
+    font-family: 'Roboto' , sans-serif;
+    cursor: pointer;
+    padding:1px 12px;
+}
+.video-detail-share-button, .video-detail-download-button , .video-detail-more-button{
+    border: none;
+    background-color: #272626;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto' , sans-serif;
+    cursor: pointer;
+    padding:10px 12px;
+    margin-right:12px;
+}
+.video-detail-description-container{
+    background-color: #272727;
+    border-radius: 10px;
+    color: white;
+    padding-left:1em;
+}
+.video-detail-description-date-view{
+    display: flex;
+    flex-direction: row;
+}
+#video-detail-descrtipton-view{
+    margin-right:20px;
+}
+.video-detail-comment-container{
+    background-color: #0f0f0f42;
+    border-radius: 20px;
+    display: flex;
+}
+.video-detail-comment-count{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto' , sans-serif;
+}
+.video-detail-comment-left{
+    padding-left: 1em;
+    padding-top: 1em;
+    
+}
+.video-detail-comment-photo{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.video-detail-comment-date-name{
+    display: flex;
+    flex-direction: row;
+}
+.video-detail-comment-nickname{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Roboto' , sans-serif;
+}
+#video-detail-comment-date{
+    color: rgb(167, 167, 167);
+    font-size: 15px;
+    font-family: 'Roboto' , sans-serif;
+    margin-left:1em;
+}
+.video-detail-comment-text{
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto' , sans-serif;
+    margin-top:-12px;
+}
+.video-detail-comment-like , .video-detail-comment-dislike , .video-detail-comment-answer{
+    font-size: 14px;
+    font-family: 'Roboto' , sans-serif;
+    font-weight: bolder;
+    color: white;
+    border: none;
+    padding:5px 10px;
+    background-color: transparent;
+}
+.video-detail-container-right{
+    width: 32%;
+}
+.video-detail-box{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.video-detail-box-image{
+    width: 190px;
+    height: 110px;
+    border-radius: 6px;
+    margin-left:25px;
+    margin-right: 10px;
+}
+.video-detail-box-right{
+    display: flex;
+    flex-direction: column;
+}
+.video-detail-box-title{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto' , sans-serif;
+    
+}
+#full-description {
+    display: none;
+
+}
+
+#less-btn {
+    display: none;
+    margin-left:5px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 13px;
+    font-family: 'Roboto' , sans-serif;
+    font-weight: bold;
+
+}
+#more-btn {
+    margin-left:5px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 13px;
+    font-family: 'Roboto' , sans-serif;
+    font-weight: bold;
+
+    
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.video-detail-box-date-view{
+    display: flex;
+    margin-top: -10px;
+}
+.video-detail-box-channel{
+    color: rgb(167, 167, 167);
+    font-size: 14px;
+    margin-top: -4px;
+    font-family: 'Roboto' , sans-serif;
+}
+#video-detail-view {
+    color: rgb(167, 167, 167);
+    font-size: 12px;
+    margin-top: 1px;
+    font-family: 'Roboto' , sans-serif;
+    margin-right: 1em;
+}
+#video-detail-recommend-date{
+    color: rgb(167, 167, 167);
+    font-size: 12px;
+    margin-top: 1px;
+    font-family: 'Roboto' , sans-serif;
+}

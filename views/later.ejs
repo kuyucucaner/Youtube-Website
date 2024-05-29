@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>CanerTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/later.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+  <%- include('../views/partials/navbar') %>
+
+  <% if (user) { %>
+      <% if (later.videos && later.videos.length > 0) { %>
+          <div class="watch-later-container" id="watch-later-container">
+              <div class="watch-later-left">
+                  <img src="<%= later.videos[0].thumbnail_url %>" alt="watch-later-image" class="watch-later-image">
+                  <p class="watch-later-title">Daha sonra izle</p>
+                  <p class="watch-later-owner"><%= later.videos[0].display_name %></p>
+                  <div class="watch-later-date-length">
+                      <p class="watch-later-length"><%= later.totalCountLater %> video Görüntülenme yok</p>
+                      <p class="watch-later-date">En son <%= new Date(later.videos[0].upload_date).toLocaleDateString('tr-TR') %> tarihinde</p>
+                  </div>
+                  <div class="watch-later-button-container">
+                      <button class="watch-later-download"><i class="bi bi-arrow-down"></i></button>
+                      <button class="watch-later-setting"><i class="bi bi-three-dots-vertical"></i></button>
+                  </div>
+                  <div class="watch-later-button-container">
+                      <button class="watch-later-play"><i class="bi bi-play-fill"></i> Tümünü oynat</button>
+                      <button class="watch-later-shuffle"><i class="bi bi-shuffle"></i> Karıştır</button>
+                  </div>
+              </div>
+              <div class="watch-later-right">
+                  <% later.videos.forEach(function(laterItem) { %>
+                      <a href="http://localhost:3000/video-detail/<%= laterItem.video_id %>" class="video-link-href">
+                          <div class="watch-later-video-row">
+                              <img src="<%= laterItem.thumbnail_url %>" alt="later-image" class="watch-later-video-image">
+                              <div class="watch-later-video-text">
+                                  <p class="watch-later-video-title"><%= laterItem.title %></p>
+                                  <div class="watch-later-information">
+                                      <p class="watch-later-video-display"><%= laterItem.display_name %></p>
+                                      <p class="video-view"><%= laterItem.view_count %></p>
+                                      <div class="slider-item-publish-time"><%= laterItem.upload_date %></div>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  <% }); %>
+              </div>
+          </div>
+      <% } else { %>
+          <div class="watch-later-container" id="watch-later-container">
+              <p class="watch-later-title">Daha sonra izle listesi boş</p>
+          </div>
+      <% } %>
+  <% } else { %>
+      <div class="watch-later-login">
+          <p class="watch-later-login-text">Lütfen CanerTube'ye giriş yapınız!</p>
+          <button class="watch-later-login-button" onclick="goToLogin()">Giriş yap</button>
+      </div>
+  <% } %>
+  
+  <%- include('../views/partials/sidebar') %>
+  
+  <script src="/javascripts/sidebar-later-handle.js"></script>
+  <script src="/javascripts/voice-input.js"></script>
+  <script src="/javascripts/clear-input.js"></script>
+  <script src="/javascripts/navigate-to.js"></script>
+  <script src="/javascripts/google-login.js"></script>
+  <script src="/javascripts/time-difference-you.js"></script>
+  <script src='/javascripts/searched-videos.js'></script>
+
+  <script src="/javascripts/view-changer.js"></script>
+  <script src="/javascripts/navbar-setting-dropdown.js"></script>
+  <script src="/javascripts/navbar-profile-dropdown.js"></script>
+  <script src="/javascripts/navbar-setting-limited-toggle.js"></script>
+  <script src="/javascripts/close-shorts.js"></script>
+    
+</body>
+</html>

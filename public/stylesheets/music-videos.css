@@ -1,0 +1,93 @@
+body{
+    background-color: #0f0f0f;
+    scroll-behavior: auto;
+    font-family: 'Roboto' , sans-serif;
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.music-videos-container{
+    margin-left: 10.8em;
+    margin-top: 5.6em;
+    cursor: pointer;
+}
+.music-videos-title{
+    color: white;
+    font-size: 34px;
+    font-weight: bold;
+}
+.music-videos-left{
+    width: 90%;
+}
+.music-videos-video-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.music-videos-video-image{
+    min-width: 250px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.music-videos-video-text{
+    display: flex;
+    margin-left:10px;
+    flex-direction: column;
+}
+.music-videos-video-title{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+}
+.music-videos-video-channel-view{
+    display: flex;
+    flex-direction: row;
+    margin-top:-1.5em;
+
+}
+.music-videos-video-channel{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-left: 1px;
+
+}
+#music-videos-video-view{
+    margin-left: 20px;
+    color: #aaaaaa;
+    font-size: 13px;
+}
+.music-videos-video-description{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-top: 0em;
+}
+.music-videos-login{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20em;
+    text-align: center;
+    align-items: center;
+}
+.music-videos-login-text{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.music-videos-login-button{
+    color: white;
+    background-color: #272727;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s background-color ease;
+}
+.music-videos-login-button:hover {
+    background-color: #444444;
+}

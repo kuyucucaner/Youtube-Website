@@ -1,0 +1,130 @@
+
+.short-box-title-container{
+    display: flex;
+    align-items: center;
+  }
+  .short-box-title{
+    margin-right: auto;
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto' , sans-serif;
+  }
+  #short-box-title-icon{
+    color: red;
+  }
+  .short-box-title-close{
+    background-color: transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    }
+    .short-box-title-close:hover{
+        background-color: rgb(55, 55, 55, 0.5);
+    }
+    .short-box-title-close:hover::after {
+        content: "İlgilenmiyorum";
+        position: absolute;
+        bottom: -92px; /* İstediğiniz konuma göre değerleri ayarlayabilirsiniz */
+        right: 55px; /* İstediğiniz yatay konumu belirtin */
+        transform: translateX(-50%); /* Yatay konumu merkeze hizalamak için */
+        border-radius: 4px;
+        background-color: rgb(119, 119, 119); /* İstenilen arka plan rengi */
+        color:white;
+        font-size: 12px;
+        padding:10px; /* İstenilen dolgu ve kenar boşluğu değerleri */
+        white-space: nowrap; /* Metnin tek satırda kalmasını sağlar */
+      }
+      .short-box-first {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom:20px;
+      }
+      .short-box-second {
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom:20px;
+      }
+      .short-box-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 100px;
+      }
+      
+      .short-box-divider {
+        width: calc(100% ); /* button'un genişliği hariç */
+        border-bottom: 1px solid gray;
+        position: absolute;
+        bottom: 18px;
+        z-index: 1; /* Diğer öğelerin üzerine çıkacak */
+      }
+      
+      .show-more-button {
+        padding: 10px 111px;
+        border: 1px solid gray;
+        background-color: #0f0f0f;
+        color: white;
+        border-radius: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        font-weight: bolder;
+        cursor: pointer;
+        z-index: 2;
+      }
+      
+      .short-video-image {
+        width: 225px; /* Adjusted width to account for margins */
+        height: 450px; /* Adjusted height */
+        margin-bottom: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .short-video:last-child {
+        margin-right:0; /* Remove margin-right from the last video */
+    }  
+
+    .short-video-text{
+        color:white;
+        margin-top:-10px;
+        margin-left:4px;
+        font-family: 'Roboto' , sans-serif;
+        font-weight: bold;
+    }
+    
+    .short-video-viewer{
+        color: #999999;
+        font-family: 'Roboto' , sans-serif;
+        font-size: 12px;
+        margin-top:-5px;
+        margin-left:4px;
+
+    }
+    .video-link-href {
+      text-decoration: none;
+      color: inherit;
+      display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+    }
+    
+    .when-shorts-closed{
+      display: none;
+      padding-top:20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.11);
+      border-top: 1px solid rgba(128, 128, 128, 0.11);;
+      margin-bottom: 30px;
+    }
+    .when-shorts-closed-text{
+      color: #999999;
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+    }
+ 

@@ -1,0 +1,217 @@
+body{
+    background-color: #0f0f0f;
+    font-family: 'Roboto', sans-serif;
+}
+.channel-container{
+    margin-top: 5em;
+    margin-left:12em;
+}
+.channel-user-container{
+    display: flex;
+    flex-direction: row;
+}
+.channel-user-photo{
+    width: 9.8em;
+    height:9.8em;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.channel-user-container-right{
+    display: flex;
+    flex-direction: column;
+    margin-left:25px;
+}
+.channel-user-name{
+    font-size: 30px;
+    font-weight: bold;
+    color:white;
+    margin-top: 0;
+}
+.channel-user-nickname-subscription{
+    display: flex;
+    flex-direction: row;
+    margin-top:-2em;
+}
+.channel-user-nickname {
+    font-size: 14px;
+    color:#b0b0b0;
+}
+.channel-user-subscription{
+    font-size: 14px;
+    color:#b0b0b0;
+    margin-left:10px;
+}
+.channel-user-more-button{
+    font-size: 14px;
+    color:#b0b0b0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-right: auto;
+}
+.channel-user-setting-button{
+    margin-top:1em;
+}
+.channel-user-set-channel-button{
+    background-color: #272727;
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.channel-user-set-video-button{
+    background-color: #272727;
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.channel-button-container{
+    border-bottom: 1px solid rgb(87, 87, 87);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+
+}
+.channel-button-home{
+    margin-left: 10em;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding:10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.channel-button-list ,.channel-button-community ,.channel-button-search{
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding:10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.channel-video-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 10em;
+}
+.channel-video-row{
+    width: 24%; /* Adjust as needed */
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.video-link-href{
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Ensures the <a> tag covers the entire area of .video-box */
+}
+.channel-video-image{
+    min-width: 280px;
+    min-height: 150px;
+    max-width: 280px;
+    max-height: 150px;
+    border-radius: 10px;
+}
+.channel-video-name{
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+.channel-video-user-name{
+    color: #aaaaaa;
+    font-size: 13px;
+    margin-top: -10px;
+
+}
+.additional-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -15px;
+}
+.video-view{
+    color: #aaaaaa;
+    font-size: 12px;
+}
+.slider-item-publish-time{
+    color: #aaaaaa;
+    font-size: 12px;
+    margin-left:15px;
+}
+
+.channel-playlist-video-container{  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right:6em;
+    margin-left: 9em;
+    margin-top:15px;
+  }
+.channel-playlist-video-row{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .channel-playlist-video-list-image{
+    width:250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border-top: 5px solid rgba(255, 255, 255, 0.452);
+    cursor: pointer;
+    position: relative;
+  }
+  .channel-playlist-video-length{
+    color: white;
+    background-color: #362f27cb;
+    font-size: 13px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Roboto' , sans-serif;
+    position: absolute;
+    bottom:16em;
+    margin-left:11em;
+    padding: 8px 20px;
+  }
+  .channel-playlist-video-list-name{
+    color: white;
+    font-family: 'Roboto' , sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  .channel-playlist-container{
+    margin-top:15px;
+  }
+  .channel-playlist-title{
+    color: white;
+    font-size: 16px;
+    margin-top:15px;
+    font-weight: bold;
+}
+.channel-playlist-top {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    margin-left:9em;
+  }
+  .channel-playlist-show-all{
+    color: #b0b0b0;
+    font-size: 12px;
+  }
+.channel-community-text{
+    color: white;
+    font-weight: bold;
+
+}
+.channel-community-container{
+text-align: center;
+}
+

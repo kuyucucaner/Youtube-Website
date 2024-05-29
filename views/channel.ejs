@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CanerTube</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/channel.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/scroll-bar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ </head>
+  <body>
+    <%- include('../views/partials/navbar') %>
+    <div class="channel-container" id="channel-container">
+        <div class="channel-user-container">
+            <div class="channel-user-container-left">
+                <img src="<%= profile[0]?.photo %>" alt="channel-user-photo" class="channel-user-photo">
+            </div>
+            <div class="channel-user-container-right">
+                <p class="channel-user-name"><%=profile[0]?.display_name %></p>
+                <div class="channel-user-nickname-subscription">
+                    <p class="channel-user-nickname"> @<%=profile[0]?.user_name %></p>
+                    <p class="channel-user-subscription">-  4 Abone</p>
+                </div>
+                <button class="channel-user-more-button">Bu kanal hakkında daha fazla bilgi <i class="bi bi-arrow-right-short"></i></button>
+                <div class="channel-user-setting-button">
+                    <button class="channel-user-set-channel-button">Kanalı özelleştir</button>
+                    <button class="channel-user-set-video-button">Videoları yönet</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="channel-button-container" id="channel-button-container">
+        <button class="channel-button-home" onclick="goToChannel()">Ana Sayfa</button>
+        <button class="channel-button-list"  onclick="goToChannelPlaylist()">Oynatma listeleri</button>
+        <button class="channel-button-community"  onclick="goToChannelCommunity()">Topluluk</button>
+    </div>
+    <div class="channel-featured-container" id="channel-featured-container">
+        <img src="https://static.vecteezy.com/system/resources/previews/002/335/936/non_2x/video-player-icon-free-vector.jpg" class="channel-featured-image"alt ="channel-featured-image">
+        <p class="channel-featured-header-text">Tüm cihazlarda içerik oluşturabilirsiniz.</p>
+        <p class="channel-featured-body-text">İster evde ister dışarıda yükleyin ve kayıt yapın. Herkese açık olarak yayınladığınız tüm içerikleriniz burada gösterilir.</p>
+        <button class="channel-featured-button">Oluştur</button>
+    </div>
+    <%- include('../views/partials/sidebar') %>
+    <script src='/javascripts/sidebar-channel-handle.js'></script>
+    <script src='/javascripts/voice-input.js'></script>
+    <script src='/javascripts/clear-input.js'></script>
+    <script src='/javascripts/navigate-to.js'></script>
+    <script src='/javascripts/google-login.js'></script>
+    <script src='/javascripts/time-difference.js'></script>
+    <script src='/javascripts/view-changer.js'></script>
+    <script src='/javascripts/navbar-setting-dropdown.js'></script>
+    <script src='/javascripts/navbar-profile-dropdown.js'></script>
+    <script src='/javascripts/searched-videos.js'></script>
+
+    <script src='/javascripts/navbar-setting-limited-toggle.js'></script>
+    <script src='/javascripts/close-shorts.js'></script>
+
+  </body>
+</html>

@@ -1,4 +1,4 @@
-// dbconfig.js
+/* // dbconfig.js
 const dotenv = require('dotenv');
 dotenv.config();
 const mssql = require('mssql');
@@ -30,4 +30,4 @@ async function testConnection() {
   
   testConnection();
 
-module.exports = config;
+module.exports = config; */

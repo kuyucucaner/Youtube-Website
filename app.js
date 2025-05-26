@@ -1,3 +1,4 @@
+const http = require('http');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -16,20 +17,20 @@ var app = express();
 
 
 // Google OAuth 2.0 entegrasyonu
-passport.use(new GoogleStrategy({
+/* passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: "http://localhost:3000/auth/google/callback",
 }, function(accessToken, refreshToken, profile, cb) {
   return cb(null, profile);
-}));
+})); */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(session({
-  secret: process.env.SESSION_SECRET_KEY,
+  secret: process.env.SESSION_SECRET_KEY || 'defaultsecret',
   resave: false,
   saveUninitialized: false
 }));
@@ -69,5 +70,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+const port = process.env.PORT || 5000;
 
-module.exports = app;
+const server = http.createServer(app);
+
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

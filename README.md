@@ -3,7 +3,7 @@
 **YouTube Website Clone** is a full-stack application that replicates the core functionalities of the original YouTube platform.  
 Users can authenticate via Google, upload and watch videos, interact through likes and comments, and manage personalized playlists.  
 This project aims to mimic the real YouTube experience with essential features like video suggestions, subscriptions, and shorts.
-
+ 
 ---
 
 ## 🚀 Features
